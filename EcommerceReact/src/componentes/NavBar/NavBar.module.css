@@ -1,0 +1,38 @@
+
+.Logo{
+    color: white;
+    font-size: 50px;
+    font-family: "Rubik Doodle Shadow";
+    
+}
+
+.Barra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    height: 70px;
+    width: 100%;
+    top: 0;
+    background-color: rgb(15, 15, 140);
+}
+
+.Botones {
+    display: flex;
+}
+
+.Botones button {
+    background-color: #ffffff;
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    font-weight: 300;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.Botones button:hover {
+    background-color: #929394;
+}

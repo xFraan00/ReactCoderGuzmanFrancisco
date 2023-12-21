@@ -1,0 +1,15 @@
+
+.ContenedorCarrito{
+    display: flex;
+    margin-left: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cantidad{
+    margin-top: 5px;
+    margin-left: 10px;
+    color: white;
+    font-size: 25px;
+}
+
