@@ -1,11 +1,29 @@
-import Estilos from "./ContenedorItems.module.css"
-import Imagen from "./asset/solaire.png"
+import { useState, useEffect } from "react"
+import { getProducts, getProductsByCategory } from "../../../asyncMock"
+import ItemList from "../ItemList/ItemList"
 
-const ContenedorItems = ({greeting}) => {
-    return (
-        <div className={Estilos.contenedor}>
-        <img className={Estilos.img} src={Imagen} alt="imagen" />
-        <h2 className={Estilos.Titulo}>{greeting}</h2>
+import { useParams } from "react-router-dom"
+
+const ContenedorItems = ({greating}) =>{
+    const [products, setProducts] = useState([])
+    const {categoryId} = useParams()
+
+    useEffect (() => {
+        const asyncFunc = categoryId ? getProductsByCategory : getProducts
+
+        asyncFunc(categoryId)
+            .then(response =>{
+                setProducts(response)
+            })
+            .catch(error =>{
+                console.error(error)
+            })
+    }, [categoryId])
+
+    return(
+        <div>
+            <h1>{greating}</h1>
+            <ItemList products={products} />
         </div>
     )
 }

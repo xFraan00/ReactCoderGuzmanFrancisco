@@ -1,0 +1,22 @@
+
+.Contador {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+}
+
+.Boton{
+    background-color: red;
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.Numero{
+    color: black;
+    font-size: 50px;
+}
