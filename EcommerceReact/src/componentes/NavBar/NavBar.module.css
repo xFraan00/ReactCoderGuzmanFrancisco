@@ -1,10 +1,11 @@
 
 .Logo{
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     font-family: "Rubik Doodle Shadow";
-    
+    text-decoration: none;
 }
+
 
 .Barra {
     display: flex;

@@ -5,7 +5,7 @@ const products = [
         title: "Red Dead Redemtion 2",
         price: 60,
         category: "Steam",
-        Img: "../red-dead-redemtion-Portada.jpg",
+        Img: "../red-dead-redemption-Portada.jpg",
         stock: 10,
         description: "Red Dead Redemption 2 es un juego de acción y aventuras desarrollado por Rockstar Games. Lanzado en 2018, es la secuela de Red Dead Redemption. Ambientado en el salvaje oeste en 1899, sigue la historia de Arthur Morgan, miembro de la banda Van der Linde."
     },
@@ -29,7 +29,7 @@ const products = [
     },
     {
         id: "4",
-        title: "Sekiro Shadow Dies Twice",
+        title: "Sekiro Shadow Die Twice",
         price: 60,
         category: "Xbox",
         Img: "../Sekiro.Portada.jpg",

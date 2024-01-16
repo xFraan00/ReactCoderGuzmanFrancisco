@@ -1,30 +1,73 @@
-.Card{
-    width: 45%;
-    margin: 10px;
-    padding: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+
+.Card {
+    display: flex; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 70%;
     box-sizing: border-box;
+    margin-top: 20px;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.CardBody{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: white;
-    border-radius: 20px;
-  }
-  
-  .title {
-    font-size: 1.2em;
+    padding: 2rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #ffffff;
     margin-bottom: 10px;
-  }
-  
-  .img {
-    text-align: center;
-  }
-  
-  .image {
-    max-width: 100%;
-  }
-  
-  .text {
-    margin-top: 5px;
-  }
-  
+}
+
+.img {
+    flex: 0 0 30%; 
+    margin-right: 20px;
+}
+
+.img img {
+    width: 100%;
+    border-radius: 4px;
+    height: 100%;
+}
+
+.Descripcion {
+    flex: 1;
+}
+
+.Texto {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.Texto strong{
+    font-size: 1.4rem
+}
+
+.Title{
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-size: 40px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.Footer {
+    margin-top: 15px;
+}

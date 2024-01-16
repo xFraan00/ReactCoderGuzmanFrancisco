@@ -1,32 +1,38 @@
 import ItemCount from "../ItemCount/ItemCount";
 import Clase from  "../ItemDetail/ItemDetail.module.css"
 
-const Itemdetail = ({id, title, img, category, description, price, stock}) =>{
+const Itemdetail = ({id, title, Img, category, description, price, stock}) =>{
     return(
+    <div className={Clase.Container}>
         <article className={Clase.Card}>
-        <header>
-            <h2 className={Clase.tittle}>
-                {title}
-            </h2>
-        </header>
         <picture className={Clase.img}>
-            <img src={img} alt="" />
+            <img src={Img} alt={`Imagen de ${title}`} />
         </picture>
+        <div className={Clase.CardBody}>
         <section className={Clase.Descripcion}>
-            <p className={Clase.Texto}>
-                Precio: ${price}
+            <p className={Clase.Title}>
+                {title}
             </p>
-            <p >
-                Stock disponible: {stock}
+            <div className={Clase.Texto}>
+            <p>
+            <strong>Precio: </strong>  
+                ${price}
             </p>
+            <p>
+            <strong>Stock disponible: </strong> 
+            {stock}
+            </p>
+            </div>
             <p className={Clase.Texto}>
-                Desctripcion: {description}
+                 {description}
             </p>
         </section>
         <footer className={Clase.Footer}>
         <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("Cantidad Agregada",quantity)}/>
         </footer>
+        </div>
     </article>
+</div>
     )
 }
 
