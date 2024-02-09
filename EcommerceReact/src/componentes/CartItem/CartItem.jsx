@@ -2,7 +2,7 @@ import React from 'react';
 import Clases from "../CartItem/CartItem.module.css";
 import Imagenes from "./assets/trash-bin.png";
 
-const CartItem = ({ img, title, price, quantity, id, onDelete }) => {
+const CartItem = ({  title, price, quantity, id, onDelete }) => {
     
     const handleDelete = () => {
         onDelete(id);

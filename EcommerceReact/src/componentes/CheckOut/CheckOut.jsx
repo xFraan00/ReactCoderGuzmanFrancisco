@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import CheckoutForm from "../CheckOutForm/CheckOutForm";
-import { Timestamp, writeBatch, collection, addDoc, getDocs, query, doc, where } from "firebase/firestore";
+import { Timestamp, writeBatch, collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../services/firebase/firebaseConfig";
 import { CartContext } from "../../context/CartContext";
 import Clases from "../CheckOut/CheckOut.module.css";
@@ -8,7 +8,7 @@ import Clases from "../CheckOut/CheckOut.module.css";
 const CheckOut = () => {
     const [loading, setLoading] = useState(false);
     const [orderId, setOrderId] = useState("");
-    const { cart, clearCart } = useContext(CartContext); // Obtener la función clearCart del contexto
+    const { cart, clearCart } = useContext(CartContext);
 
     const createOrder = async ({ name, phone, email }) => {
         setLoading(true);
@@ -51,7 +51,7 @@ const CheckOut = () => {
                 const orderAdded = await addDoc(orderRef, objOrder);
 
                 setOrderId(orderAdded.id);
-                clearCart(); // Limpiar el carrito después de confirmar la orden
+                clearCart();
             } else {
                 console.error("Hay productos fuera de stock");
             }

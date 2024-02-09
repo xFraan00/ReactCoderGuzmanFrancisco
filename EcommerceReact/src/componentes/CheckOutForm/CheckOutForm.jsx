@@ -1,5 +1,6 @@
-import React, { useState } from "react"; 
-import Clases from "./CheckOutForm.module.css"; 
+import React, { useState } from "react";
+import Swal from 'sweetalert2';
+import Clases from "./CheckOutForm.module.css";
 
 const CheckOutForm = ({ onCreate }) => {
     const [name, setName] = useState("");
@@ -9,12 +10,27 @@ const CheckOutForm = ({ onCreate }) => {
     const handleConfirm = (event) => {
         event.preventDefault();
 
-        const userData = {
-            name,
-            phone,
-            email
-        }
-        onCreate(userData);
+        Swal.fire({
+            title: 'Confirmar compra',
+            text: '¿Estás seguro de proceder con la compra?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, comprar',
+            cancelButtonText: 'Cancelar',
+            customClass: {
+                confirmButton: 'button confirm',
+                cancelButton: 'button cancel',
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const userData = {
+                    name,
+                    phone,
+                    email
+                }
+                onCreate(userData);
+            }
+        });
     }
 
     return (

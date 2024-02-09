@@ -1,12 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import Clase from "../ItemDetail/ItemDetail.module.css";
 import { CartContext } from "../../context/CartContext";
 
-const Itemdetail = ({id, title, img, category, description, price, stock}) => {
+const Itemdetail = ({ id, title, img, category, description, price, stock }) => {
     const [quantityAdded, setQuantityAdded] = useState(0);
     const { addItem } = useContext(CartContext);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleOnAdd = (quantity) => {
         setQuantityAdded(quantity);
@@ -19,6 +28,10 @@ const Itemdetail = ({id, title, img, category, description, price, stock}) => {
 
         addItem(item, quantity);
     };
+
+    if (loading) {
+        return <h2 className={Clase.Loading}>Cargando...</h2>;
+    }
 
     return (
         <div className={Clase.Container}>

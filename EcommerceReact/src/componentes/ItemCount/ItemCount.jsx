@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Swal from 'sweetalert2'; 
 import Clases from './itemCount.module.css';
 
 const itemCount = ({ stock, initial, onAdd }) => {
@@ -16,6 +17,17 @@ const itemCount = ({ stock, initial, onAdd }) => {
     }
   };
 
+  const handleAddToCart = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Producto Agregado',
+      text: `Se ha agregado ${quantity} producto(s) al carrito.`,
+      showConfirmButton: false,
+      timer: 1500 
+    });
+    onAdd(quantity);
+  };
+
   return (
     <div className={Clases.Contador}>
       <div className={Clases.Controles}>
@@ -30,7 +42,7 @@ const itemCount = ({ stock, initial, onAdd }) => {
       <div>
         <button
           className={Clases.Boton}
-          onClick={() => onAdd(quantity)}
+          onClick={handleAddToCart}
           disabled={!stock}
         >
           Agregar al Carrito
