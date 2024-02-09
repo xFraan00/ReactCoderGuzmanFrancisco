@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+
+.Contenedor{
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: rem;
+        margin-top: 20px;
+}
+
+.titulo{
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-family: "Roboto Slab" ;
+}

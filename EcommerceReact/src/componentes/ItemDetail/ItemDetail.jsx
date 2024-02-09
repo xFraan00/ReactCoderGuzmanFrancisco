@@ -4,7 +4,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import Clase from "../ItemDetail/ItemDetail.module.css";
 import { CartContext } from "../../context/CartContext";
 
-const Itemdetail = ({id, title, img, description, price, stock}) => {
+const Itemdetail = ({id, title, img, category, description, price, stock}) => {
     const [quantityAdded, setQuantityAdded] = useState(0);
     const { addItem } = useContext(CartContext);
 
@@ -32,6 +32,7 @@ const Itemdetail = ({id, title, img, description, price, stock}) => {
                         <div className={Clase.Texto}>
                             <p><strong>Precio: </strong>${price}</p>
                             <p><strong>Stock disponible: </strong>{stock}</p>
+                            <p><strong>Plataforma: </strong>{category}</p>
                         </div>
                         <p className={Clase.Texto}>{description}</p>
                     </section>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 //import { getProducts, getProductsByCategory } from "../../../asyncMock"
 import ItemList from "../ItemList/ItemList"
 import { db } from "../../services/firebase/firebaseConfig"
-import { getDocs, collection, } from "firebase/firestore"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 
 
@@ -14,7 +14,9 @@ const ContenedorItems = ({greating}) =>{
 
     useEffect (() => {
 
-       const productsCollection = collection(db,"products")
+       const productsCollection = categoryId
+        ? query(collection(db,"products"), where("category", "==", categoryId))
+        : collection(db,"products")
 
         getDocs(productsCollection)
             .then(QuerySnapshot =>{
@@ -22,7 +24,7 @@ const ContenedorItems = ({greating}) =>{
                     const fields = doc.data()
                     return{ id: doc.id, ...fields}
                 })
-                setProducts(productAdapted)
+                setProducts(productAdapted);
             })
 
 
@@ -38,9 +40,9 @@ const ContenedorItems = ({greating}) =>{
             })*/
     }, [categoryId])
 
+    
     return(
         <div>
-            <h1>{greating}</h1>
             <ItemList products={products} />
         </div>
     )
