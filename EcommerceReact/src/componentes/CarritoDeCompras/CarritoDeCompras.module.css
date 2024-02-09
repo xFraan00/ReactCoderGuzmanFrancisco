@@ -1,15 +1,26 @@
 
-.ContenedorCarrito{
-    display: flex;
-    margin-left: 80px;
-    justify-content: center;
-    align-items: center;
+
+.Cantidad {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
 }
 
-.Cantidad{
-    margin-top: 5px;
-    margin-left: 10px;
-    color: white;
-    font-size: 25px;
+.ImagenCarrito {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
 }
 
+.CantidadNumero {
+  background-color: #f44336; 
+  color: rgb(255, 255, 255);
+  border-radius: 50%; 
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}

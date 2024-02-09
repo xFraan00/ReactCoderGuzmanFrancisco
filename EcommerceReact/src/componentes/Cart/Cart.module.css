@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.titulo{
+color: white;
+text-align: center;
+margin-top: 40px;
+font-family: "Roboto Slab";
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #fbfbfb;
+    color: #000000;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px 20px 20px 20px;
+    font-size: 1.4rem;
+    
+
+    &:hover {
+        background-color: #929394;
+    }
+
+    &:disabled {
+        background-color: #ddd;
+        color: #666;
+        cursor: not-allowed;
+    }
+}
+
+.texto{
+    color: white;
+}
+
+
+
+.cartItem{
+    display: flex;
+}
+
+.total{
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #fbfbfb;
+    color: #000000;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 20px 20px 20px 20px;
+    font-size: 1.4rem;
+    font-family: "Roboto Slab";
+}
+
+.botones{
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    text-decoration: none;
+    
+}

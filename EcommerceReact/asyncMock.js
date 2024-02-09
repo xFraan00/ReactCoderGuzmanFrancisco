@@ -30,7 +30,7 @@ const products = [
     {
         id: "4",
         title: "Sekiro Shadow Die Twice",
-        price: 60,
+        price: 45,
         category: "Xbox",
         Img: "../Sekiro.Portada.jpg",
         stock: 10,
@@ -48,7 +48,7 @@ const products = [
     {
         id: "6",
         title: "Hades",
-        price: 60,
+        price: 20,
         category: "Xbox",
         Img: "../Hades_Pack_Portada.webp",
         stock: 10,
@@ -66,7 +66,7 @@ const products = [
     {
         id: "8",
         title: "BloodBorne",
-        price: 60,
+        price: 45,
         category: "Play",
         Img: "../Bloodborne.portada.webp",
         stock: 10,
@@ -75,7 +75,7 @@ const products = [
     {
         id: "9",
         title: "Grand Theft Auto V",
-        price: 60,
+        price: 30,
         category: "Play",
         Img: "../gtaV-portada.jpg",
         stock: 10,

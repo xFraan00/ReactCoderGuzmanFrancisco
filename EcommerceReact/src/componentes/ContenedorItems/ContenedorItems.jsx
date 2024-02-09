@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react"
-import { getProducts, getProductsByCategory } from "../../../asyncMock"
+//import { getProducts, getProductsByCategory } from "../../../asyncMock"
 import ItemList from "../ItemList/ItemList"
+import { db } from "../../services/firebase/firebaseConfig"
+import { getDocs, collection, } from "firebase/firestore"
+
+
 
 import { useParams } from "react-router-dom"
 
@@ -9,7 +13,21 @@ const ContenedorItems = ({greating}) =>{
     const {categoryId} = useParams()
 
     useEffect (() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts
+
+       const productsCollection = collection(db,"products")
+
+        getDocs(productsCollection)
+            .then(QuerySnapshot =>{
+                const productAdapted = QuerySnapshot.docs.map(doc =>{
+                    const fields = doc.data()
+                    return{ id: doc.id, ...fields}
+                })
+                setProducts(productAdapted)
+            })
+
+
+
+ /*       const asyncFunc = categoryId ? getProductsByCategory : getProducts
 
         asyncFunc(categoryId)
             .then(response =>{
@@ -17,7 +35,7 @@ const ContenedorItems = ({greating}) =>{
             })
             .catch(error =>{
                 console.error(error)
-            })
+            })*/
     }, [categoryId])
 
     return(
